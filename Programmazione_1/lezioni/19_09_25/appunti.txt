@@ -1,0 +1,38 @@
+appunti 25_09_19
+
+-correzione homework
+	-tipo	&<nome_funzione> //non ha senso 
+	-d=a+b+c, uso concatenato della funzione func(a,func(b,c)) e i tipi devono essere gli stessi
+	-divido le funzioni che lavorano sul complesso, e quelle che lavorano sul vettore,
+		devo dare la poss. all utente di usare Complesso come vuole. //rendere piu generale l'uso del tipo T
+	-quindi meglio dividere in complesso.h/cpp e uno vettComplesso.h/cpp
+	-meccanismo per evitare il nesting delle lib, ONCE
+	-struct posso omettere il typedef, in quanto struct è gia una definizione
+	-op. di flusso per tipi strutturati
+	-vedere meglio bubblesort
+		ottimizzazioni:
+				bolla più pesante
+				stop al caso tutto ordinato
+				
+-puntatori
+	puntatori void, si usa quando vuoi creare un puntatore che ancora non sa a che tipo puntare("puntatore generico")
+		non possiamo accedere all'area puntata,quindi puoi fare poco, in seguito deve esserci una conversione esplicita di tipo
+	puntatori a struct
+		posso accedere anche con la notazione puntata, ma anche con l'operatore FRECCIA
+			(*ptr).x=a;
+			ptr->x=a;
+	puntatori a dato costante
+		il puntatore può essere modificato, ma non può essere usato per modificare il val puntatore	
+			const TIPO* p;
+	Puntatore costante
+		non posso modificare il puntatore
+			TIPO* const p; //usato implicitamente col nome di un vettore in quanto il nome del vettore non può essere modificato
+	puntatore costante a dato costante
+		non posso modificare ne il puntatore ne il valore puntato("solo lettura")
+			const TIPO* const p;
+-esercizio in classe
+	int n=x; e int n; e n=x; sono due cose diverse la prima e un inizializzazione, l'altra un assegnazione. nel primo caso viene creato e contestualmente gli viene dato un valore. nel secondo n viene definito, allocato ad un val. indefinito e poi gli viene assegnato un valore.
+	
+		
+
+	
