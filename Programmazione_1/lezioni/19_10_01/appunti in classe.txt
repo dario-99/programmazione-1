@@ -1,2 +1,39 @@
 LEZIONE 01/10/19:
--
+-allocazione dinamica
+allochiamo dinmicamente le variabili con l'operatore newche prende come operando un tipo T per sapere quano spazio deve prendere, e ritornail primo indirizzo dell'area heap, questo indirizzo deve essere salvata da qualche parte altrimenti nn possiamo acedervi sprecando spazio, quindi usiamo un puntatore dello stesso tipo per accedere.
+
+in realta esistono più new con l'overloading delle funzioni.
+infatti esiste anche new tipo[N], per dire quante variabili vogliamo allocare.
+
+il vantaggio è che N è una variabile non piu una costante, perche il compilatore non sa delle variabile, ma viene eseguita solo a tempo di esecuzione.
+
+NOTA: NEW E UNA FUNZIONE!!!!,quindi il compilatore controlla solo se è chiamata bene e del puntatore
+
+OPERATORE DELETE
+
+la variabile allocata da noi, è deallocata quando vogliamo con l'operatore delete.
+come per new ce ne sono di più con lo stesso nome, delete p e delete[] p.
+per deallocare sia il singolo elemento che tutti gli elementi allocati.
+ATTENZIONE dopo il delete il puntatore punta ancora a quell'area heap, ma l'area è instabile.
+
+il puntatore essendo una variabile automatica morirà alla fine delle parentesi graffe.
+
+Possiamo allora utilizzare il puntatore a un vettore dinamico, cosi:
+	a[i] o +(a+i)
+	
+RIDIMENSIONARE un array dinamico significa copiare i dati temporaneamenti deallocare quello che stava prima, e allocare dinamicamente di nuovo con una maggiore dimensione, questa operazione si chiama RESIZE
+
+OPERATORE ->
+op di sinistra, è un puntatore ad un record, a destra vuole un campo del record
+
+
+ERRORI:
+	LEAK DI MEMORIA
+	area irrecuperabile perchè abbiamo perso il puntatore
+
+	LASCIARE l'INDIRIZZO NEL PUNTATORE DOPO IL DELETE questo fenomeno è detto DANGLING REFERENCE
+	
+	
+	
+
+
