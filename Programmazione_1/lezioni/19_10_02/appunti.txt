@@ -1,0 +1,23 @@
+appunti 02-10-19
+
+Tra record possiamo usare l'operazione di assegnazione, record r1,r2; r1=r2; è lecita
+all'interno di una struct,i campi del record per esempio una stringa, potebbe essere allocata dinamicamente.allora dobbiamo fornire all'utente le funzioni per gestire questa situazioni(COSTRUTTORI in pratica).
+quindi quando facciamo R1=R2,il compilatore copierà dei campi. Nel caso in cui alloco dinamicamente, quindi il campo è un puntatore, il compilatore copierà solo il puntatore.il compilatore fa una copia BIT a BIT dell'indirizzo.
+Quindi non avremo due variabili indipendenti, in quanto i due record sono UGUALI in quanto puntano alla stessa area di memoria, quindi liberando quell'area di memoria la libero PER ENTRAMBI
+
+Quindi quando usiamo un allocazione dinamica, dobbiamo anche dare una funzione di ASSEGNAZIONE come strcpy();
+questo è più complicato ovviamente perchè è difficile vietarlo all'utente.
+
+FARE HOMEWORKS
+operatore di risolubilita di visibilita ::
+utilizziamo la notazione puntata per, eseguire un comportamento del tipo complesso.
+nel paradiigma ad oggetti, nella sua filosofia, vuol dire mandare un messaggio all'oggetto e richiedere quel comportamento
+
+COSTRUTTORE
+deve avere lo stesso nome del tipo, non deve avere tipo di ritorno, viene automaticamente chiamata quando viene allocata la variabile.
+
+se due funz sono diverse solo dal tipo di ritorno non sono distinguibili
+tra due interfacce una const e un altra non const, sono diverse
+
+c++ ha i PARAMETRI DI DEFAULT
+Complesso(const float,const floar=1);
