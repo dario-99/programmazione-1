@@ -1,0 +1,45 @@
+appunti 03_10_19:
+abbiamo visto che struct in C++ offre molto di più di C, ad esempio abbiamo inserito delle funzioni all'interno delle struct,togliendo anche i parametri, poiche la funzione ha già visibilità sul parametro su cui opera.
+il CONST finale ci dice se puo o non puo essere modificato il record cioe i suoi campi.
+Questa rivoluzione ci porta a un nuovo paradigma, che non tratta più procedure ma COMPORTAMENTI DI ENTITA REALI
+
+FUNZIONI INLINE
+	analogo delle macro per c,per utilizzarle c'è bisogno di inserire il codice nel .h, o nel .cpp del MAIN.
+	con inline quando la funzione viene chiamata, il compilatore quando compila il codice sostitusce la chiamata con il codice della funzione.Viene usata spesso quando è una funzione molto piccola chiamata molto spesso.
+
+PROBLEMI SVILUPPO SOFTWARE(in the large)quindi a grande scala
+	-deve essere affidabile
+	-tempo di esecuzione(quindi complessità computazionale)
+	-deve assicurare la modificabilità del codice
+	-deve essere estensibile, cioe posso aggiungere delle funzionalita
+	-deve essere riutilizzabile, quindi deve essere un algoritmo GENERALE.(quindi con la modularizzazione, le procedure devono 	solo scambiarsi informazioni per collaborare per risolvere il problema)
+	
+IL CRITERIO DI SUDDIVISIONE DEI SOTTOPROGRAMMI
+	l'insieme dei sottoprogrammi formano un sottosistemi, e il criterio di raggruppamento è di funzionalità,ad esempio sottosistema GUI,di CONTROLLO, di ingresso e uscita etc..
+	abbiamo due tipi di ASTRAZIONE FONDAMENTALI:
+		-astrazione sul controllo:
+			il modello "SCATOLA-NERA" cioè nascondiamo la procedure(programmazione classica modulare)
+		-astrazione sui dati:
+			abbiamo un entità reale, che esibisce un comportamento, e stiamo astreanedo le caratteristiche necessarie per sviluppare la nostra applicazione, ovviamente trascurando quelle non necessarie ai COMPORTAMENTI richiesti
+IL CONCETTO DI MODULO
+	componente software che realizza un ASTRAZIONE, esporta all'esterno dati e funzionalita.
+	inoltre può IMPORTARE delle funzionalita da altri MODULI
+	Teoricamente il Modulo ha un interfaccia e un Corpo(cioe dove sta il codice)(".h e .cpp")
+	l'utente in questo modello è visto come un MODULO, infatti importa altri moduli.
+METODOLOGIA DI SVILUPPO
+	l'organizzazione dei moduli puo essere fatta in due modi, BOTTOM-UP,TOP-DOWN
+	la programmazione ad oggetti utilizza principalmente quella BOTTOM-UP, quella procedurale TOP-DOWN.
+INFORMATION HIDING
+	è importante NASCONDERE le informazioni del nostro modulo.quindi vogliamo che l'utente deve soltanto utilizzare l'INTERFACCIA.Significa quindi nascondere e proteggere le informazione all'interno del modulo.
+	fin'ora abbiamo visto un information hiding solo per le funzioni, infatti forniamo solo il PROTOTIPO.
+	vedremo che nasconeremo anche i campi(ATTRIBUTI).
+	Deve seguire però alcuni criteri:
+		-dobbiamo mostrare solo LO STRETTO NECESSARIO, altrimenti PRIVATE.
+		-deve essere stabile, quindi L'INTERFACCE devono essere STABILI, BEN PROGETTATE e MINIMALI, stabili nel senso che in caso di modifica deve essere riutilizzabile senza cambiare il codice del modulo chiamante
+COESIONE E ACCOPIAMENTO
+	un modulo si dice debolmente accoppiato se non ci sono INDIPENDENZE tra i due(un esempio di dipendenza è una variabile globale)
+	si tendono molto ad evitare questi forti accoppiamenti, ad esempio a molte chiamate ad altri moduli.quindi si tende ad un accoppiamento debole.
+	però sarebbe comodo esportare dei comportamenti OMOGENEI,quindi sufficientemente indipendenti questo è detto ACCOPIAMENTO,
+	sono due concetti opposti quindi c'è bisogno di trovare un bilancio tra i due.
+
+
