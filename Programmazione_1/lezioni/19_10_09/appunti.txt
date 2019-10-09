@@ -1,0 +1,56 @@
+LEZIONE 19-10-09:
+
+class è un meccanismo fornito dal linguaggio,è usato per definire classi e oggetti,come notiamo l'unica differenza e che di default tutto nella classe è privato, mentre nella struct di default tutto è pubblico
+
+in una classe è possibili definire 3 diritti di acceso:
+	1)Private: non è visibile all'esterno, incapsulato all'interno
+	2)Public: Visibile tutti
+	3)Protected: 
+METODI GETTER E SETTER
+	se diamo i get e set diamo l'oppurtunità all'utente di accedere agli attributi,quindi viola un pò l'idea di classe e di incapsulamento.
+	però l'unico vantaggio è il controllo dell'ingresso,cioè costringiamo all'utente l'utilizzo corretto della classe,quindi possiamo conrollare l'accesso e la gestione degli oggetti.
+NUOVE TERMINOLOGIE
+	la classe prende il ruolo di aggregato dove vale l'information hiding,la classe definisce un tipo
+	una variabile di quel tipo si  chiama OGGETTO
+	Le funzioni definite all'interno alla classe si chiamano METODI o Funzioni Membro.
+	i Campi del record vengono chiamate Variabile Membro(stesso significato).
+	
+	nel .h scriviamo la SPECIFICA di una CLASSE,o definizione.
+	nella specifica scriviamo LE REGOLE SINTATTICHE PER L'UTILIZZO DELLA CLASSE.
+UML( unified modelling language)
+	è un linguaggio di rappresentazione grafica, utilizzata per la modellazione di sistemi orientati agli oggetti
+	è uno strumento usato per comunicare tra i gruppi,consente di descrivere DEI MODELLI, con cui nel linguaggio possiamo definire il modello(col  linguaggio di programmazione)
+	UML è detto anche META-MODELLO, perche consente di definire un modello.
+	ha dei vantaggi, perchè quando usiamo un META-MODELLO di una classe,(metafora di una classe),Uno strumento automatico può leggere il modello e creare già il CODICE!!(molto comodo).
+	però essendo a un livello molto alto, può essere usato in DIVERSI LINGUAGGI.
+	("VEDERE SINTASSI SULLE SLIDE")
+RUOLO DI UNA CLASSE:
+	una classe può avere due ruoli:
+		-SERVENTE:mette a disposizione il suo modulo(classe)
+		-CLIENTE:può utlizzare risorse da altre classi
+La classe ha una:
+	Parte Base:parte allocata in base alla definizione della classe(gestita dal compilatore.
+	
+	Estensione: e la parte che gestisce il PROGRAMMATORE
+	
+	ad esempio, creo un puntatore come attributo che quindi viene gestito dal compilatore.
+	e a questo puntatore assegno una variabile dinamica(ESTESIONE DINAMICA), qui saremo noi i responsabili del ciclo divita della variabile.(a partire dalla inizializzazione alla deallocazione)
+	
+	Per utilizzare gli oggetti è responsabilita del programmatore:
+		-definizione	
+		-allocazione
+		-inizializzazione
+		-deallocazione
+	il compilatore ci supporta chiamando automaticamente delle funizioni alla creazione e alla fine del ciclo di vita
+	COSTRUTTORE:
+		viene chiamata automaticamente alla definizione dell'oggetto.
+		deve occuparsi anche della ALLOCAZIONE, e eventaualmente  della INIZIALIZZAZIONE
+	DISTRUTTORE:
+		~<nome_classe>
+		alla fine del ciclo di vita dell'oggetto il compilatore chiama il DISTRUTTORE per deallocare l'oggetto.
+		In caso di ALLOCAZIONE DINAMICA, dobbiamo creare noi stessi un distruttore.
+		
+	questo semplifica molto,l'utilizzo all'utente in quanto non si deve preoccupare della deallocazione e della creazione.
+LISTA DI INIZIALIZZAZIONE:
+	è un concetto importante,nel momento in cui l'utente istanzia un oggetto, il compilatore ti assicura di chiamare il COSTRUTTORE,la lista di inizializzazione ti assicura che prima di entrare nel corpo del COSTRUTTORE, le VARIABILI MEMBRO siano già inizializzate.
+	all'interno si possono chiamare anche funzioni(new ad esempio)
