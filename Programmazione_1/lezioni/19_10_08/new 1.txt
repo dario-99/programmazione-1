@@ -1,0 +1,8 @@
+<html>
+<head>
+	<title>DIO PORCOOOO</title>
+</head>
+<body>
+	<font color="blue" size="10"><marquee></marquee></font>
+</body>
+</html>

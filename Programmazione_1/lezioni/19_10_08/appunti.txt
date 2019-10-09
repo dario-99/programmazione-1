@@ -1,0 +1,24 @@
+appunti lezione 19_10_08
+-DATE DI ESAME:
+	8 gennaio(EXTRA)
+	24 gennaio
+	17 febbraio
+	18 marzo
+-Revisione dell'homework_2
+	utilizzare parametri di default per la funzione default
+	void create_entry(Entry &, const int =0, const char * = "");
+	void create_entry(Entry &e, const int k, const char * t){
+		e.info=new char [strlen(t)+1];
+		strcpy(e.info,t);
+		e.key=k;
+	}
+-RIFERIMENTI
+	T &r; deve essere inizializzato e non puo essere modificato
+	attraverso esso puo essere modificato il valore dell'oggetto riferito
+-CONCETTI DI BASE DI OOP
+	segue il concetto di information hiding,ma vogliamo nascondere oltre alle funzioni anche i dati.
+	l'utente deve lavorare sul oggetto nella sua interezza con i metodi che noi forniamo all'utente.
+	ABSTRACT DATA TYPE
+		una struttura dati,un aggregato,INCAPSULATA cioe NASCOSTA, dietro le funzioni che noi forniamo.
+		all'utente diamo solo l'interfaccia
+	L'INTERFACCIA deve essere STABILE, l'utente non deve modificare il codice. 
