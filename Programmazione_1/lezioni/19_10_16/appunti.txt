@@ -1,0 +1,25 @@
+appunti 19-10-16
+
+OVERLOADING DEGLI OPERATORI DEL LINGUAGGIO(+,- etc)
+	permettiamo agli utenti di usare gli operatori sui tipi strutturati da noi, con la keyword(operator)
+	gli operatori generalmente sono unari o binari, possono essere pre/post fissi
+	NOTA
+		-i costruttori e i distruttori devono essere FUNZIONI MEMBRO quindi chiamate automaticamente
+		-l'operatore = non può essere utilizzato
+		-se implementiamo un operatore unario, significa che l'operatore arrivera all oggetto tramite this e non avra parametri
+			c1+c2  ===> c1.operator+(c2) =======>operator+(&c1,c2)
+			quindi viene chiamato sull'operatore di sinistra
+			in realtà con la notazione puntata viene scritto l'indirizzo di c1 implicitamente tra i parametri
+		-pero non possiamo ad esempio fare
+			c3=c1+4
+		in quanto 4 non è un complesso ma un FLOAT
+	FUNZIONI AMICHE
+		sono funzioni non membro che il progettista ,da il permesso di accesso alle variabili membro
+		si inseriscono nella classe, ma vengono precedute dalla parola FRIEND
+		nell'implementazione viene scritta senza :: e friend semplicemente il prototipo
+	OPERATORI DI SHIFT (<< o >>)
+		con cout siamo obbligati adusarlo come funzione NON MEMBRO, poichè cout è un oggetto a se stante
+		quindi dichiaramo la funzione friend, come parametro avra cout e un complesso,
+		avrà allora come parametro un "ostream" e un Complesso
+		ostream per riferimento in quanto deve essere modificato
+		il tipo di ritorno è necessario per la concatenazione quindi deve ritornare ostream&
