@@ -1,0 +1,66 @@
+APPUNTI 19-10-23
+VATIABILI MEMBRO CONST:
+	ad esempio la data di nascita deve rimanere costante, posso definire una attributo definito alla creazione dell oggetto e mai piu MODIFICABILE
+VARIABILI MEMBRO STATIC:
+	supponiamo che ogni oggetto deve sapere quanti altre istanze ci sono. per farlo tutti gli oggetti CONDIVIDONO l'accesso a questa parte di stato. PERO questa parte di memoria deve essere accessibile solo dagli oggetti
+	per farlo dobbiamo definirla nella classe, ma deve venire instanziata una sola volta.
+	DEVE UTILIZZARE LA CLASSE DI MEMORIZZAZIONE STATIC
+		Spesso bisogna inizializzarla, e deve essere fatta una volta sola!!
+		l'istruzione deve essere inserita NEL FILE DI IMPLEMENTAZIONE UNA VOLTA SOLA FUORI DA TUTTO
+	nel caso dovremo passare questa informazione all'utente, dobbiamo fornire una funzione MEMBRO oppure renderla pubblica
+FUNZIONI MEMBRO STATIC:
+	deve poter accedere alla variabile static anche se non ESISTONO OGGETTI, quindi inseriamo le funzioni membro STATIC
+	queste funzioni particolare ESISTONO indipendemente dall'esistenza di oggetti, e inoltre NON PUO USARE THIS
+	per chiamare una funzione membro static senza aver istanziato OGGETTI
+		<Ambito di visibilita>::<funzione_membro_static(<parametri>...)
+NOTE:
+	const int N;
+		se inserita a livello GLOBALE il compilaoìtore la tratta come una label
+		se inserita a livello di classe puo essere inizializzata (DATA)
+	questo è in realta è un problema perche spesso ci serve un etichetta nella classe
+		una soluzione è ENUM.
+			nella classe:
+				enum(N=100);
+			però è un raggiro ed e stata inserita succesivamente un metodo
+		static const 
+			per definizione è una costante a TEMPO DI COMPILAZIONE(etichetta)
+				static const int N=100;
+ACCENNO CLASSI AMICHE (non vale proprietà transitiva):
+CONVERSION CONTRUCTOR:
+	fa un conversione implicita, prende un solo parametro di ingresso(nell esempio del vettore deve dare la dimensione del vettore)
+	per farlo dobbiamo inserire la parola chiave EXPLICIT
+HOMEWORK 3:
+	ENTRY in OOP, con estensione dinamica.
+	Prendiamo l'ELENCO e implementiamola come CLASSE.
+	Prendiamo l'ELENCO e invece del vettore C usare la classe VETTORE
+PRECOMPILATORE O PREPROCESSORE:
+	non è implementato in tutti i linguaggi,
+	è un programma che viene chiamato PRIMA DEL COMPILATORE
+	prende in ingresso UN MODOLO in SORGENTE e butta fuori un ALTRO SORGENTE
+	quindi il compilatore trova un altro sorgente
+	MA COSA FA IL PRECOMPILATORE:
+		elimina i commenti
+		modifica il sorgente tramite delle DIRETTIVE che sono precedute da un # ed e seguito dai TOKEN.
+			una direttiva ha effetto da quel punto in poi
+		MACRO
+			significa dare un etichetta ad un PEZZO DI CODICE.(sostituzione testuale)
+			#define <nome> <codice>
+			#define max(x,y) ((X)>(Y) ? (X):(Y))
+				simile alle funzione inline in c++
+				questo caso puoi usarla anche con nomi diversi da X e Y
+		INCLUDE
+			cerca un file, lo apre e lo copia dove trova la direttiva
+			<> nella cartella include
+			"" nella stessa directory
+				se non si trova nello stessa directory possiamo stabilire un path, ma rende il codice NON PORTATBILI
+		COMPILAZIONE CONDIZIONAlE
+			if ifdef ifndef elif else endif
+				guidano la compilazione vincolando alla valutazione della condizione
+			puo essere usata per la portabiltà del codice ad esempio per l'utilizzo su molti sistemi operativi
+			per usare questa feature possiamo usare la variabile d'ambiente che ci dice il SO
+				#if LINUX...
+			possiamo includere una sola volta
+			#ifndef	_COMPLEX_H
+			#define _COMPLEX_H
+			<libreria>
+			#endif
