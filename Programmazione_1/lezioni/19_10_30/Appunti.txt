@@ -1,0 +1,54 @@
+Appunti 19-10-30
+NAMESPACE:
+	risolve i conflitti tra i nomi, generando un AMBITO DI VISIBILITà, contenente classi,struct etc.
+	tutto l'interno del namespace non è pubblico, ma lo è il nome del namespace
+	per accedere ai nomi del namespace:
+		1)	using namespace <nome>; //per aprire tutti i nomi, da usare solo quando si usano tutti i nomi frequentemente
+		2)	namespace::<nome>;	//per aprire un solo nome
+	notazione:
+		per convenzione senza .h devo usare i namespace
+		altrimenti non c'è bisogno
+		Per aggiungere una libreria del C:
+			#include <cstring> ad esempio, quindi inserire il carattere C prima del nome
+			
+	Namespace cii permette sia di Definire che Implementare nello stesso file, ma convenzionalmente e separare i due file, utilizzando il risolutore di VISIBILITà ("analogo alla implementazione metodi delle classi")
+	NOTA:
+		l'ambiente globale è un Namespace, quindi per accedervi posso fare cosi:
+			int f();
+			int main(){
+				int f=5;
+				std::cout<<::f()<<std::endl;		//VA BENE IN QUANTO USO ::, ALTRIMENTI F OVERRIDE LA FUNZIONE
+			}
+	CONFLITTI:
+		1)	stesso nome di un membro interno di due namespace diversi:
+				si può risolvere con il RISOLUTORE DI VISIBILITà
+		2)	DUE NAMESPACE CON LO STESSO NOME:
+				per il compilatore sono lo stesso NAMESPACE ed è voluto, in quanto LI FONDI. il problema è quando usiamo due namespace creati da due programmatori diversi, con un membro di nome uguale, questo puo generare un conflitto, generalmento si usano nomi diversi, oppure l'utilizzatore deve autonamente usare ALIAS
+	il conflitto due puo essere usato da noi per creare il nostro NAMESPACE su piu file, essendo in fine FUSI
+	
+	NAMESPACE INLINE:
+		possiamo all'interno del mio namespace innestare altri namespace, questo è usato per il supporto di una versione LEGACY
+			namespace A
+				inline namespace NEW{
+					....
+				}
+				namsepace OLD{
+					...
+				}
+			}
+		cosi facendo implicitamente si usa quella inline, ALtrimenti si puo esplicitare il nome della versione LEGACY per utilizzare quella
+ECCEZIONI:
+	per risolvere i problemi di RUN-TIME, questi problemi possono essere gestiti, oppure non possono essere gestite ma devono essere COMUNICATE.
+	in generale gli errori di run-time sono difficili da gestire, e manualmente è molto complicato farlo.
+	percio c++ ci da un Costrutto che ci permette di GESTIRE LE ECCEZIONI
+		1)	throw: 	lancia l'eccezione, la sintassi è throw <val>, val puo essere di qualunque tipo
+		2)	Try:	è un costrutto in cui devono essere usate le istruzioni che possono generare un eccezione
+		3)	Catch:	deve essere utilizzata solo dopo Try o altri catch, ha come parametro un tipo generalmente che è il tipo dell'eccezione "LANCIATA",
+					e nome eventualemente, in questa costrutto VIENE GESTITA L'ECCEZIONE lanciata
+					
+	-La parola throw puo essere usata anche nella definizione delle funzioni cosi facendo diamo una lista delle eccezioni che può generare la funzione
+	-catch(...): prende tutte le eccezioni che possono essere lanciate, deve essere usata come ultimo catch, cosi facendo acchiappa l'eccezione che non non
+				 abbiamo controllato
+	-una catch può lanciare un eccezione a sua volta, questo nel caso in cui non riesce a risolvere totalmente il problema,
+		puo usare throw; senza nome cosi facendo rilancia l'eccezione che stava gestendo.
+	
