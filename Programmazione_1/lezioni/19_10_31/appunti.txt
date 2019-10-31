@@ -1,0 +1,29 @@
+APPUNTI 19_10_31
+ERIDITARIETà:
+	Consente di definire nuove classi che sono la SPECIALIZZAZIONE o ESTENSIONE di classi pre-esistenti
+	
+	la relazione tra le classi puo essere di GENERALIZZAZIONE o SPECIALIZZAZIONE, quindi dal particolare al generale e viceversa
+	
+	la relazione tra classi è del tipo IS-A (auto è un mezzo di trasporto? // il gatto è un felino?), come vediamo è una relazione definita per specializzazione("i mezzi di rasporto non sono solo automobili"), le SOTTO-CLASSI(derivata, figlia), devono essere trattate come la CLASSE BASE(classe padre)
+	
+	nell eridetarietà si RIUSA il codice OGGETTO, scrivendo cosi meno codice, inoltre possiamo far ereditare solo alcuni aspetti(PROTECTED), inoltre possiamo modificare nella SOTTO-CLASSE alcuni comportamenti che ha ereditato.
+	
+	un oggetto puo essere diviso in:
+		PARTE PROPRIA
+		PARTE BASE
+		
+	La SOTTO-CLASSE puo modificare il comportamento di alcune FUNZIONI MEMBRO ereditate, ad esempio la funzione STAMPA sara uguale all'esterno ma la SOTTO-CLASSE dovra modificare l'implementazione
+	
+	come notiamo subito per l'information hiding le classi derivate non possono accedere ai membri PRIVATE, percio si introduce una nuova KEY-WORD, detta PROTECTED, che permette l'accesso alle classi derivate, ma blocca ancora l'accesso all'utente
+	
+	Il costruttore della CLASSE BASE è invocato nella LISTA DI INIAZIALIZZAZIONE:
+		Circle::Circle(param..):Shape(){
+			this -> radius = radius
+		}
+	per questo motivo basta chiamare solo il Costruttore della classe immediatamente sopra, non tutti perche gli altri vengono chiamati a cascata(dal piu derviato al meno derivato)
+	
+	Alcune funzione membro non vengono mai ereditate,
+		1)costruttori(anche di copia)
+		2)distruttore
+		3)assegnazione
+		4)Private
