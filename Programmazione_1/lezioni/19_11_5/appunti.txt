@@ -1,0 +1,8 @@
+lezione 19_11_05
+OBJECT SLICING
+	affettamento dell'oggetto, cioe fiene buttata la parte DERIVATA, e viene usata sola la parte ereditata
+		(IL MOTIVO PERCHE POSSO ASSEGNARE P1 = A2)
+	un puntatore alla classe derivata puo puntare a una classe piu alta nella gerarchia,
+		UP CASTING (punta al sotto oggetto BASE dell' oogetto derivato)
+		viene fatta una conversione di tipo implicito
+	NON VALE IL CONTRARIO(DOWN CASTING NON VALE)
