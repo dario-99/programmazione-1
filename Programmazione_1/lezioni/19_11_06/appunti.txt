@@ -1,0 +1,42 @@
+APPUNTI 19_11_06
+modalita di derivazione:
+	possiamo inserire la parola chiave PUBLIC, Protected o Private quando estendiamo una classe.
+	questo fa in modo di cambiare i diritti di accesso, PUO SOLO RESTRINGERLI
+	Se usiamo Private, possiamo BLOCCARE l'ereditarietà
+	(SOLO PER L'UTENTE, per le sottoclassi rimangono gli stessi diritti)
+	
+	se uso la modalita PROTECED e PRIVATE non uso piu la relazione IS A, ma e solo un RIUSO di codice
+	la sola modalita IS A e la PUBLIC
+DERIVAZIONE MULTIPlA:
+	class D: public A, public C
+	Questo puo creare un problema chiamato DIAMOND PROBLEM, 
+	A    A
+	|    |
+	B    C
+	 \  /
+	   D		//D deriva due volte le variabili membro di A e le funzioni membro
+	   
+	Questo problema è stato risolto molto piu in la, per questo motivo molti linguaggi non permettono l'ereditarietà multipla
+	per risolverlo (raggirarlo) posso usare il RISOLUTORE DI VISIBILTà
+	Per risolvere definitivamente, e l'utilizzo di PUNTATORI Al sottooggetto di tipo B e C,
+	e l'ordine è LESSICOGRAFICO, cioe nell ordine in cui vengono ereditate le classi
+	
+	VIRTUAL:
+		per risolvere questo problema posso usare la parola chiave VIRTUAL, che in genere non CAMBIA NULLA ALLA CLASSE, ma rendera la vita facile alle classi derivate che erediteranno da PIU CLASSI
+		
+		COSI FACENDO LA CLASSE DERIVATA AVRA DEI PUNTATORI AL SOTTOOGGETTO
+		
+		con l'utilizzo di virtual B e C avranno funzioni membro uguali, ma nel loro costruttore, la chiamata al costruttore  A, verra ignorata quando chiamata dal costruttore di D 
+		
+	POLIMORFISMO:
+		consente agli oggetti di classi diverse all'interno di una gerarchia un comportamento diverso A TEMPO DI ESECUZIONE, in questo modo il tipo dell oggetto chiamato non è noto a tempo di compilazione, per legare la funzione e l'oggetto in un momento successivo usiamo il LATE BINDING(BINDING DINAMICO)
+		
+		VIRTUAL DI FUNZIONE
+			consente di chaiamare la funzione effettiva del tipo puntato anche se il tipo puntato è della classe BASE
+		POLIMORFISMO VIA POINTER
+			se usiamo un puntatore della classe base e puntiamo ad un oggetto di classe derivata(UP-CASTING), A tempo di copilazione eseguira la funzione della classe BASE(, se invece usiamo la parola VIRTUAL, il compilatore se ne lava le mani, e tutto vieneBINDATO DINAMICAMENTE.
+		POLIMORFISMO VIA REFERENCE
+			con i puntatori dobbiamo utilizzare per forza ->, quindi siamo tentati a pensare che con la notazione puntata stiamo sempre eseguendo un EARLY BINDING, ma in realtà l'UP-CASTING si puo usare anche sui RIFERIMENTI, cosi facendo stiamo effettuando un LATE BINDING.
+		lo scopo del polimorfismo NON è IL RIUSO DI CODICE, anzi è il contrario, ma il suo vantaggio e quello della flessibilità, un utente puo usare un metodo su un oggetto di cui non sa nemmeno il tipo.
+		
+		
