@@ -1,0 +1,12 @@
+Appunti:
+RIPETIZIONE POLIMORFISMO
+	Classe astratta
+		Virtuale puro: 	=0
+		
+GERARCHIA ECCEZIONI
+	sappiamo possiamo generare una classe di ECCEZIONI, 
+	possiamo utilizzare l'ereditarieta, ma dobbiamo fare catch dalla piu derivate , alle meno derivate fino alla Classe Base.
+	
+	usando il POLIMORFISMO possiamo invece fare un solo catch con argomento un <TIPOCLASSE_BASE> &<nome>
+	
+HOMEWORK 3:
