@@ -1,0 +1,4 @@
+Appunti 27/11
+Liste Linkate:
+	lo implementiamo con le classi
+	gli elementi vengono allocati ON DEMAND, è definita in maniera ricorsiva 

@@ -1,0 +1,33 @@
+Appunti:
+	fare lista ordinata
+	fare insert e remove utilizzando la ricorsione,  con la OOP.(fare funzioni private a cui puoi passare il puntatore alla testa)
+	lista ordinata con vettore, allocata dinamicamente
+	
+File:
+	Stream:
+		ereditato dal C, è basato sull astrazione del concetto di CANALE, cioe un flusso di dati e di informazioni tra il PGM e un dispositivo FISICO.
+		il canale CONTIENE seguenze di caratteri terminata dal EOF.
+		il canale può essere aperto o chiusa, con le due relative OPERAZIONI.
+		dal punto di vista logico, si estraggono o si immettono dati
+		
+		Ovviamente c++ utilizza un approccio OOP, la classe principale è IOS, che si occupa di comunicare col S.O.
+		Istream: tutto quello che riguardo l'input
+		Ostream: Output
+		fstream: riguarda i file
+		iostream: sia istream che ostream, cioe tutto quello che riguarda I/O
+		ifstream: erefita sia di istream e sia da fstreambase
+		
+		Lo stream è inteso come un OGGETTO, che ha:
+			stato: fornisce lo stato dell'operazione corrente
+			buffer:contiene i dati sia di ingresso che di output
+			translator: converte i dati in modo da essere compresi dal IO device, o per essere compreso dall'oggetto utilizzatore dello stream
+		
+	File:
+		possono essere sia di testo che binario(si deve specificare)
+		per aprire un file possiamo sia usare il costruttore che .open
+			avrà come parameto il path, e gli specificatori(indicano il modo di utilizzo del file)
+		la chiusura .close()
+		gli specificatori si indicano con std::<specificatore> e in realtà sono costanti presenti nello scope di IOS
+		funzioni seek e tell
+		
+		Get e Put
