@@ -1,0 +1,12 @@
+Appunti:
+	spesso ci sono casi in cui dobbiamo modificare solo alcuni valori di una entry su un file di testo, ma modificarlo significa fare parsing, lettera per lettera.
+	per ovviare a qeusto si usano spesso i file binari, a cui possiamo accedere semplicemente perchè sappiamo quanto spazio abbiamo riservato.
+	FILE BINARIO:
+		dobbiamo usare lo specificatore ios::binary
+		non possiamo usare gli operatori di shift, dobbiamo leggere a BLOCCHI DI BYTE con le funzioni READ e WRITE,queste funzioni funzionano solo su stringa quindi spesso bisogna fare un casting esplicito.
+		GCOUNT(), dice quanti byte sono stati letti
+		WRITE(), scrive n bytes consecutive all posizione puntata da SOURCE, se il puntatore e nel mezzo del file sovascrive, se punta alla fine del file va in append.
+		FARE FILE ACCOUNT BANCARIO, PRIMA INIZIALIZZA E POI INSERISCI USANDO ATE.
+		
+	SERIALIZZAZIONE DEGLI OGGETTI:
+		viola il principio dell'information hiding
