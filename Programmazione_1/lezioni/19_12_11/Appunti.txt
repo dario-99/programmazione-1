@@ -1,0 +1,45 @@
+appunti:
+	STL: standarrd template library
+		CONTENITORI:
+			liste, set, code etc..
+			hanno tutti un insieme specifico di gunzioni tipo gli operatori = etc..
+			hanno dei typedef ad esempio value_type, size_type etc..
+			pensiamolo come un tubo che contiene degli elementi
+			VECTOR: ha i soliti svantaggi del vettore
+			DEQUE: è praticamente una lista linkata, però all'esterno è un vettore e permette l'utilizzo dell'operatore [], 
+					in somma è una via di mezzo tra una lista e un vettore.
+			LIST:  
+			
+		ITERATORE:
+			è un oggetto, associato al tipo di contenitore, ma non ne fa parte.è serve all'utente a scorrere nel contenitore
+			è un astrazione di un puntatore, quindi oltre a puntare ha delle feature che lo rende un PUNTATORE INTELLIGENTE.
+			possono fare sia accesso in avanti(FORWARD) o dalla fine(REVERSE),
+			ci sono iteratori BIDIREZIONALI, che possono sia scorrere avanti che indietro.
+			ci sono anche iteratori che fanno RANDOM ACCES, quindi un accesso diretto
+			ovviamente devono seguire le politiche di gestione dei contenitori.
+			VECTOR: possiamo usare praticamente qualsiasi iteratore
+			CODA BIFRONTE: anche lei possoiamo usare qualsiasi iteratore
+			LISTA: possiamo anche accedervi in modo BIDIREZIONALE, in quanto è una lista DOPPIAMENTE LINKATA, cioè ogni 
+				   elemento ha 3 campi, l'info, e due puntatori uno al precedente e uno al successivo
+			ADAPTERS cioe stack o code: non hanno altri modi di accesso, poichè bloccati dalla loro politica di gestione
+			
+			const_iterator: iteratori solo in lettura
+			iterator: sia in I che O
+			reverse: si puo inserire nella definizione degli itetratori per farlo iniziare dalla fine del contenitori
+			METODI
+			begin: inizializza l'iteratore all'inizio del contenitore
+			end: restituisce un iteratore che punta alla FINE del contenitore
+			r: da il reverse
+			++p o p++: spostare l'iteratore all'elemento successivo
+			*P: ci fornisce il valore del elemento puntatore
+			assegnazione, disuguaglianza etc: disponibili solo per quelli di input
+			incremento di n posizioni: con l'operatore += o -=
+			DEFINIZIONE:
+				esempio:
+					vector<char>::const_iterator p;
+					oppure passando il tipo
+					istream_iterator<int> p(cin);
+		ALGORITMI:
+			è una libreria che contiene gli algoritmi più usati ad esempio quelli  di ricerca e di ordinamento
+		TYPENAME:
+			
