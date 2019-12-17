@@ -1,0 +1,10 @@
+LEZIONE:
+	macro ASSERT: 
+		utilizzata nel debugging, nella libreria c.
+		si utilizza per cercare i NOSTRI ERRORI. ma non deve restare nel codice.
+		assert verifica il predicato dell'affermazione che passa, se l'affermazione è falsa blocca il programma e stampa il contenuto in forma di stringa.
+		utilizzando -dmdebug(???) il compilatore ignorerà gli assert
+	ESERCITAZIONE LABORATORIO FINALE(DA VEDERE)
+	
+	HOMEWORK 5:
+		
